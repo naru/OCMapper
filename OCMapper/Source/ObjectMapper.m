@@ -382,7 +382,7 @@
 	{
 		id nestedObject = [self objectFromSource:objectInArray toInstanceOfClass:class];
 		
-    if (nestedObject && ![nestedObject isKindOfClass: [NSNull class]])
+        if (nestedObject && ![nestedObject isKindOfClass: [NSNull class]])
 			[collection addObject:nestedObject];
 	}
 	
