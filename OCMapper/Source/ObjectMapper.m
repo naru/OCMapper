@@ -541,6 +541,10 @@
 {
 	NSString *key = [NSString stringWithFormat:@"%@.%@", NSStringFromClass(class), property];
 	
+  if (self.mappedPropertyNames == NULL) {
+    self.mappedPropertyNames = [NSMutableDictionary dictionary];
+  }
+
 	if (self.mappedPropertyNames[key]) {
 		return self.mappedPropertyNames[key];
 	}
@@ -553,11 +557,6 @@
 							stringByReplacingOccurrencesOfString:@"@" withString:@""]
 						   stringByReplacingOccurrencesOfString:@"\"" withString:@""];
 	
-  
-  if (self.mappedPropertyNames == NULL) {
-    self.mappedPropertyNames = [NSMutableDictionary dictionary];
-  }
-
 	if (className) {
 		self.mappedPropertyNames[key] = className;
 	}
