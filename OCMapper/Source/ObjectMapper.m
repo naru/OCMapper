@@ -553,6 +553,11 @@
 							stringByReplacingOccurrencesOfString:@"@" withString:@""]
 						   stringByReplacingOccurrencesOfString:@"\"" withString:@""];
 	
+  
+  if (self.mappedPropertyNames == NULL) {
+    self.mappedPropertyNames = [NSMutableDictionary dictionary];
+  }
+
 	if (className) {
 		self.mappedPropertyNames[key] = className;
 	}
